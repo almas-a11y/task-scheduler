@@ -1,6 +1,6 @@
 # Intelligent Task Scheduler
 
-A desktop productivity app that automatically prioritizes your tasks using a custom scoring algorithm. Built with Python and Tkinter.
+A desktop productivity app that ranks your tasks by priority using a custom scoring algorithm. Built with Python and Tkinter.
 
 ![App Screenshot](screenshots/app_screenshot.png)
 
@@ -8,13 +8,13 @@ A desktop productivity app that automatically prioritizes your tasks using a cus
 
 ## Features
 
-- **Smart priority scoring** — every task gets a score from 0–100 based on urgency and importance
-- **Conflict detection** — warns you when tasks due on the same day exceed your available hours
-- **Today's Plan** — automatically builds a focused work list for the day (8h budget)
-- **Overdue tracking** — overdue tasks are flagged and always surfaced first
-- **Persistent storage** — tasks are saved to disk in JSON and reload on every launch
-- **Edit in place** — double-click any task to update its name, deadline, duration, or priority
-- **35 passing tests** — full pytest suite covering the algorithm and task manager
+- **Smart priority scoring**: each task gets a score from 0-100 based on urgency and importance
+- **Conflict detection**: warns you when tasks due on the same day add up to more hours than you have available
+- **Today's Plan**: builds a focused work list for the day based on what fits in 8 hours
+- **Overdue tracking**: overdue tasks get flagged and always show up at the top
+- **Saves to disk**: tasks are stored in JSON and reload on every launch
+- **Edit tasks**: double-click any task to update its name, deadline, duration, or priority
+- **35 passing tests**: pytest suite covering the algorithm and task manager
 
 ---
 
@@ -34,7 +34,7 @@ Each task gets a **priority score** computed as:
 score = (urgency × 0.6) + (importance × 0.4)
 ```
 
-**Urgency** (60%) is based on days remaining until the deadline, on a 0–30 day scale:
+**Urgency** (60%) is based on days remaining until the deadline, on a 0-30 day scale:
 
 | Days Remaining | Urgency Score |
 |---|---|
@@ -52,7 +52,7 @@ score = (urgency × 0.6) + (importance × 0.4)
 | Medium | 66 |
 | Low | 33 |
 
-Tasks are then sorted highest-to-lowest. Completed tasks are removed automatically. The full breakdown is in [ALGORITHM_EXPLAINED.md](ALGORITHM_EXPLAINED.md).
+Tasks are sorted highest-to-lowest. Completed tasks are excluded. Full breakdown in [ALGORITHM_EXPLAINED.md](ALGORITHM_EXPLAINED.md).
 
 ---
 
@@ -61,17 +61,17 @@ Tasks are then sorted highest-to-lowest. Completed tasks are removed automatical
 ```
 task-scheduler/
 ├── scheduler/
-│   ├── algorithm.py      # Priority scoring, schedule builder, conflict detection
-│   ├── manager.py        # Add, update, complete, delete tasks
-│   ├── storage.py        # JSON persistence (save/load)
-│   └── task.py           # Task data model
+│   ├── algorithm.py      # priority scoring, schedule builder, conflict detection
+│   ├── manager.py        # add, update, complete, delete tasks
+│   ├── storage.py        # JSON save/load
+│   └── task.py           # task data model
 ├── gui/
-│   ├── app.py            # Tkinter UI — main window, forms, event handlers
-│   └── components/       # Reusable UI components
+│   ├── app.py            # main window, forms, event handlers
+│   └── components/       # reusable UI components
 ├── tests/
-│   ├── test_algorithm.py # Unit tests for scoring and scheduling logic
-│   └── test_manager.py   # Unit tests for task manager operations
-├── main.py               # Entry point
+│   ├── test_algorithm.py # tests for scoring and scheduling logic
+│   └── test_manager.py   # tests for task manager operations
+├── main.py               # entry point
 └── requirements.txt
 ```
 
@@ -82,7 +82,7 @@ task-scheduler/
 **Requirements:** Python 3.11+
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/task-scheduler.git
+git clone https://github.com/almas-a11y/task-scheduler.git
 cd task-scheduler
 pip install -r requirements.txt
 ```

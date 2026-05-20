@@ -7,7 +7,7 @@
 
 ## What I Worked On This Week
 
-This week was focused on setting up the project structure and implementing the core scheduling logic. The codebase is split into two layers — `scheduler/` for all the business logic and `gui/` for the Tkinter interface later — keeping them independent so each can be developed and tested on its own.
+This week was focused on setting up the project structure and implementing the core scheduling logic. The codebase is split into two layers: `scheduler/` for all the business logic and `gui/` for the Tkinter interface later, keeping them independent so each can be developed and tested on its own.
 
 The `Task` data model (`task.py`) uses Python's `dataclass` decorator and stores a task's name, deadline, duration, user-set priority level, completion status, and a computed score. UUIDs handle unique identification, and `to_dict()` / `from_dict()` methods allow tasks to be serialized for JSON storage.
 

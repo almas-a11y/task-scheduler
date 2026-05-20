@@ -1,5 +1,5 @@
 # How the Scheduling Algorithm Works
-**COSC 499 — Intelligent Task Scheduling System**
+**COSC 499 - Intelligent Task Scheduling System**
 **Student:** Almas Waseem
 
 ---
